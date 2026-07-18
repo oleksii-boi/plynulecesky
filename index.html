@@ -7,15 +7,15 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <!-- SEO -->
-  <meta name="description" content="Курси чеської мови для українців з викладачем Катериною Лещенко. Індивідуальні та групові заняття рівнів A1–C1. Сертифікат Карлового університету. Запис на заняття — kateryna@plynulecesky.com" />
-  <meta name="keywords" content="курси чеської мови, чеська мова для українців, вивчення чеської, чеська онлайн, Plynule česky, Катерина Лещенко, výuka češtiny pro Ukrajince" />
+  <meta name="description" content="Чеська мова з викладачем Катериною Лещенко. Індивідуальні та групові заняття рівнів A1–C1. Сертифікат Карлового університету. Запис на заняття — kateryna@plynulecesky.com" />
+  <meta name="keywords" content="курси чеської мови, чеська мова для іноземців, чеська для школярів та дорослих, чеська мова для українців, вивчення чеської, чеська онлайн, Plynule česky, Катерина Лещенко, výuka češtiny pro Ukrajince" />
   <meta name="author" content="Катерина Лещенко" />
   <link rel="canonical" href="https://plynulecesky.cz" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://plynulecesky.cz" />
-  <meta property="og:title" content="Plynule česky — Курси чеської мови для українців" />
+  <meta property="og:title" content="Plynule česky — Чеська мова з викладачем Катериною Лещенко" />
   <meta property="og:description" content="Індивідуальні та групові заняття з рівня A1 до C1. Викладач з 10+ роками у Чехії та сертифікатом Карлового університету." />
   <meta property="og:image" content="https://plynulecesky.cz/ava.jpg" />
   <meta property="og:locale" content="uk_UA" />
@@ -29,7 +29,7 @@
     "url": "https://plynulecesky.cz",
     "email": "kateryna@plynulecesky.com",
     "image": "https://plynulecesky.cz/ava.jpg",
-    "description": "Курси чеської мови для українців. Індивідуальні та групові заняття рівнів A1–C1.",
+    "description": "Чеська мова для з викладачем Катериною Лещенко. Індивідуальні та групові заняття рівнів A1–C1.",
     "founder": {
       "@type": "Person",
       "name": "Катерина Лещенко",
@@ -425,10 +425,12 @@
     }
 
     .price-card {
+      position: relative;
       border: 1.5px solid var(--border);
       border-radius: 16px;
       padding: 36px 32px;
       transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
     }
 
     .price-card:hover {
@@ -496,16 +498,21 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
-      transition: background 0.2s, transform 0.15s;
+      transition: background 0.2s;
     }
 
-    .price-book:hover { background: var(--blue); transform: translateY(-1px); }
-
-    .price-card.featured .price-book {
-      background: var(--blue);
+    .price-book::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
     }
 
-    .price-card.featured .price-book:hover { background: var(--navy); }
+    .price-card:hover .price-book { background: var(--blue); }
+
+    .price-card.featured .price-book { background: var(--blue); }
+
+    .price-card.featured:hover .price-book { background: var(--navy); }
 
     /* CONTACT */
     .contact { background: var(--navy); }
@@ -676,7 +683,6 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-tag" data-i18n="hero.tag">Курси чеської мови для українців</div>
   <h1>
     <span data-i18n="hero.h1a">Говоріть чеською</span><br />
     <span class="blue" data-i18n="hero.h1b">вільно і впевнено</span>
@@ -867,7 +873,7 @@
       'nav.pricing':      'Ціни',
       'nav.cta':          'Записатись',
 
-      'hero.tag':         'Курси чеської мови для українців',
+      'hero.tag':         'Чеська мова з викладачем Катериною Лещенко',
       'hero.h1a':         'Говоріть чеською',
       'hero.h1b':         'вільно і впевнено',
       'hero.sub':         'Індивідуальні та групові заняття з досвідченим викладачем із 10+ роками знання мови на рівні носія.',
