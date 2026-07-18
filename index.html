@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plynule česky — Катерина Лещенко</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- SEO -->
+  <meta name="description" content="Курси чеської мови для українців з викладачем Катериною Лещенко. Індивідуальні та групові заняття рівнів A1–C1. Сертифікат Карлового університету. Запис на заняття — kateryna@plynulecesky.com" />
+  <meta name="keywords" content="курси чеської мови, чеська мова для українців, вивчення чеської, чеська онлайн, Plynule česky, Катерина Лещенко, výuka češtiny pro Ukrajince" />
+  <meta name="author" content="Катерина Лещенко" />
+  <link rel="canonical" href="https://plynulecesky.cz" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://plynulecesky.cz" />
+  <meta property="og:title" content="Plynule česky — Курси чеської мови для українців" />
+  <meta property="og:description" content="Індивідуальні та групові заняття з рівня A1 до C1. Викладач з 10+ роками у Чехії та сертифікатом Карлового університету." />
+  <meta property="og:image" content="https://plynulecesky.cz/ava.jpg" />
+  <meta property="og:locale" content="uk_UA" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Plynule česky",
+    "url": "https://plynulecesky.cz",
+    "email": "kateryna@plynulecesky.com",
+    "image": "https://plynulecesky.cz/ava.jpg",
+    "description": "Курси чеської мови для українців. Індивідуальні та групові заняття рівнів A1–C1.",
+    "founder": {
+      "@type": "Person",
+      "name": "Катерина Лещенко",
+      "knowsLanguage": ["uk", "cs"]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Заняття з чеської мови",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Заняття 60 хвилин", "price": "700", "priceCurrency": "CZK" },
+        { "@type": "Offer", "name": "Заняття 90 хвилин", "price": "900", "priceCurrency": "CZK" }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2e4a;
+      --blue: #2563eb;
+      --blue-light: #eff6ff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --white: #ffffff;
+      --section-gap: 96px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    .logo span { color: var(--blue); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 8px 20px;
+      border-radius: 8px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--navy) !important; }
+
+    /* LANG SWITCH */
+    .lang-switch {
+      display: flex;
+      gap: 2px;
+      background: var(--blue-light);
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: 5px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .lang-btn.active {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .lang-btn:not(.active):hover {
+      color: var(--navy);
+      background: #dbeafe;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 100px 24px 80px;
+      text-align: center;
+      background: linear-gradient(160deg, var(--white) 0%, var(--blue-light) 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid #bfdbfe;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 .blue { color: var(--blue); }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--navy); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1.5px solid var(--border);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .btn-secondary:hover { border-color: var(--blue); transform: translateY(-1px); }
+
+    /* STATS */
+    .stats {
+      background: var(--navy);
+      padding: 40px 24px;
+    }
+
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    /* SECTIONS */
+    section { padding: var(--section-gap) 24px; }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 48px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .certs {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cert-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      border: 1px solid #bfdbfe;
+    }
+
+    .cert-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .cert-icon svg { width: 12px; height: 12px; }
+
+    .cert-item p {
+      font-size: 0.88rem;
+      color: var(--navy);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* METHOD */
+    .method { background: #f8fafc; }
+
+    .method-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .method-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .method-card:hover {
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .method-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--blue-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    .method-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .method-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 700px;
+    }
+
+    .price-card {
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .price-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .price-card.featured {
+      border-color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    .price-duration {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .price-amount {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .price-currency {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .price-note {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* CONTACT */
+    .contact { background: var(--navy); }
+
+    .contact .section-title { color: var(--white); }
+    .contact .section-label { color: #60a5fa; }
+    .contact .section-lead { color: #94a3b8; }
+
+    .contact-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+
+    .contact-email {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+    }
+
+    .contact-email:hover { color: #93c5fd; }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-light:hover { background: #eff6ff; transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      background: #0f1f35;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    footer p { font-size: 0.85rem; color: #475569; }
+    footer span { color: #64748b; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      :root { --section-gap: 64px; }
+
+      .nav-links { display: none; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .about-photo { aspect-ratio: 16/9; }
+
+      .method-cards { grid-template-columns: 1fr; }
+
+      .stats-inner { grid-template-columns: 1fr; gap: 28px; }
+
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+
+      .contact-card { flex-direction: column; padding: 32px 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">Plynule <span>česky</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav.about">Про мене</a></li>
+        <li><a href="#method" data-i18n="nav.method">Методика</a></li>
+        <li><a href="#pricing" data-i18n="nav.pricing">Ціни</a></li>
+        <li><a href="#contact" class="nav-cta" data-i18n="nav.cta">Записатись</a></li>
+      </ul>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="uk">UA</button>
+        <button class="lang-btn" data-lang="cs">CZ</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tag" data-i18n="hero.tag">Курси чеської мови для українців</div>
+  <h1>
+    <span data-i18n="hero.h1a">Говоріть чеською</span><br />
+    <span class="blue" data-i18n="hero.h1b">вільно і впевнено</span>
+  </h1>
+  <p class="hero-sub" data-i18n="hero.sub">Індивідуальні та групові заняття з досвідченим викладачем із 10+ роками знання мови на рівні носія.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Записатись на пробне заняття</a>
+    <a href="#about" class="btn-secondary" data-i18n="hero.cta2">Дізнатись більше</a>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-value">3+</div>
+      <div class="stat-label" data-i18n="stats.teaching">роки викладацької практики</div>
+    </div>
+    <div>
+      <div class="stat-value">A1–C1</div>
+      <div class="stat-label" data-i18n="stats.levels">рівні навчання</div>
+    </div>
+    <div>
+      <div class="stat-value">10+</div>
+      <div class="stat-label" data-i18n="stats.years">років у Чеській Республіці</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <img src="ava.jpg" alt="Катерина Лещенко" class="about-photo" />
+      <div class="about-text">
+        <div class="section-label" data-i18n="about.label">Про мене</div>
+        <h2 class="section-title"  data-i18n="about.name">Катерина Лещенко</h2>
+        <p data-i18n="about.p1">Мене звати Катерина, я проводжу як індивідуальні, так і групові заняття, програма яких адаптується під конкретні запити клієнтів.</p>
+        <p data-i18n="about.p2">Моя взаємодія з чеською мовою розпочалася ще в початковій школі, а з 2014 року я постійно проживаю в Чеській Республіці. Це дозволяє мені не лише вільно володіти мовою на рівні носія, але й глибоко розуміти соціокультурний контекст, який є критично важливим для успішної інтеграції іноземців у Чехії.</p>
+        <p data-i18n="about.p3">Протягом останніх трьох років я веду активну викладацьку практику, працюючи зі студентами рівнів від початкового (A1) до просунутого (C1).</p>
+        <div class="certs">
+          <div class="cert-item">
+            <div class="cert-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </div>
+            <p data-i18n="about.cert1">Державний сертифікат про успішне складання іспиту з чеської мови CCE на рівні C1.</p>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </div>
+            <p data-i18n="about.cert2">Сертифікат спеціалізованого методичного курсу з викладання чеської мови як іноземної при Карловому університеті (Univerzita Karlova).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method" class="method">
+  <div class="container">
+    <div class="section-label" data-i18n="method.label">Методика</div>
+    <h2 class="section-title" data-i18n="method.title">Сучасний підхід до навчання</h2>
+    <p class="section-lead" data-i18n="method.lead">Жодного механічного зазубрювання правил. Тільки живе навчання через контекст і реальну комунікацію.</p>
+    <div class="method-cards">
+      <div class="method-card">
+        <div class="method-card-icon">💬</div>
+        <h3 data-i18n="method.c1.title">Комунікативний підхід</h3>
+        <p data-i18n="method.c1.text">Фокус на реальному спілкуванні з першого заняття. Ви вчитеся говорити — а не заучувати правила.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-card-icon">📚</div>
+        <h3 data-i18n="method.c2.title">Навчання через контекст</h3>
+        <p data-i18n="method.c2.text">Лексика та граматика вивчаються у живих, реальних ситуаціях — так вони запам'ятовуються природно.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-card-icon">🎯</div>
+        <h3 data-i18n="method.c3.title">Індивідуальна програма</h3>
+        <p data-i18n="method.c3.text">Кожен курс адаптується під ваш рівень, темп і цілі — від побутового спілкування до ділової чеської.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-label" data-i18n="pricing.label">Ціни</div>
+    <h2 class="section-title" data-i18n="pricing.title">Вартість занять</h2>
+    <p class="section-lead" data-i18n="pricing.lead">Прозорі ціни без прихованих платежів. Перше пробне заняття обговорюється індивідуально.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-duration" data-i18n="pricing.d60">60 хвилин</div>
+        <div class="price-amount">700</div>
+        <div class="price-currency" data-i18n="pricing.per">CZK / заняття</div>
+        <p class="price-note" data-i18n="pricing.n60">Ідеально для регулярних занять і стабільного прогресу.</p>
+      </div>
+      <div class="price-card featured">
+        <div class="price-duration" data-i18n="pricing.d90">90 хвилин</div>
+        <div class="price-amount">900</div>
+        <div class="price-currency" data-i18n="pricing.per">CZK / заняття</div>
+        <p class="price-note" data-i18n="pricing.n90">Більше часу для практики, розбору тем і закріплення матеріалу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-label" data-i18n="contact.label">Контакт</div>
+    <h2 class="section-title" data-i18n="contact.title">Готові розпочати?</h2>
+    <p class="section-lead" data-i18n="contact.lead">Напишіть мені — разом визначимо ваш рівень і підберемо зручний графік.</p>
+    <div class="contact-card">
+      <div class="contact-info">
+        <h3 data-i18n="contact.email-label">Електронна пошта</h3>
+        <a href="mailto:kateryna@plynulecesky.com" class="contact-email">kateryna@plynulecesky.com</a>
+      </div>
+      <a href="mailto:kateryna@plynulecesky.com" class="btn-light" data-i18n="contact.btn">Написати зараз →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Plynule česky &nbsp;·&nbsp; <span>Kateryna Leshchenko</span></p>
+</footer>
+
+<script>
+  const t = {
+    uk: {
+      'nav.about':        'Про мене',
+      'nav.method':       'Методика',
+      'nav.pricing':      'Ціни',
+      'nav.cta':          'Записатись',
+
+      'hero.tag':         'Курси чеської мови для українців',
+      'hero.h1a':         'Говоріть чеською',
+      'hero.h1b':         'вільно і впевнено',
+      'hero.sub':         'Індивідуальні та групові заняття з досвідченим викладачем із 10+ роками знання мови на рівні носія.',
+      'hero.cta1':        'Записатись на пробне заняття',
+      'hero.cta2':        'Дізнатись більше',
+
+      'stats.teaching':   'роки викладацької практики',
+      'stats.levels':     'рівні навчання',
+      'stats.years':      'років у Чеській Республіці',
+
+      'about.label':      'Про мене',
+      'about.name':       'Катерина Лещенко',
+      'about.p1':         'Мене звати Катерина, я проводжу як індивідуальні, так і групові заняття, програма яких адаптується під конкретні запити клієнтів.',
+      'about.p2':         'Моя взаємодія з чеською мовою розпочалася ще в початковій школі, а з 2014 року я постійно проживаю в Чеській Республіці. Це дозволяє мені не лише вільно володіти мовою на рівні носія, але й глибоко розуміти соціокультурний контекст, який є критично важливим для успішної інтеграції іноземців у Чехії.',
+      'about.p3':         'Протягом останніх трьох років я веду активну викладацьку практику, працюючи зі студентами рівнів від початкового (A1) до просунутого (C1).',
+      'about.cert1':      'Державний сертифікат про успішне складання іспиту з чеської мови CCE на рівні C1.',
+      'about.cert2':      'Сертифікат спеціалізованого методичного курсу з викладання чеської мови як іноземної при Карловому університеті (Univerzita Karlova).',
+
+      'method.label':     'Методика',
+      'method.title':     'Сучасний підхід до навчання',
+      'method.lead':      'Жодного механічного зазубрювання правил. Тільки живе навчання через контекст і реальну комунікацію.',
+      'method.c1.title':  'Комунікативний підхід',
+      'method.c1.text':   'Фокус на реальному спілкуванні з першого заняття. Ви вчитеся говорити — а не заучувати правила.',
+      'method.c2.title':  'Навчання через контекст',
+      'method.c2.text':   "Лексика та граматика вивчаються у живих, реальних ситуаціях — так вони запам’ятовуються природно.",
+      'method.c3.title':  'Індивідуальна програма',
+      'method.c3.text':   'Кожен курс адаптується під ваш рівень, темп і цілі — від побутового спілкування до ділової чеської.',
+
+      'pricing.label':    'Ціни',
+      'pricing.title':    'Вартість занять',
+      'pricing.lead':     'Прозорі ціни без прихованих платежів. Перше пробне заняття обговорюється індивідуально.',
+      'pricing.d60':      '60 хвилин',
+      'pricing.d90':      '90 хвилин',
+      'pricing.per':      'CZK / заняття',
+      'pricing.n60':      'Ідеально для регулярних занять і стабільного прогресу.',
+      'pricing.n90':      'Більше часу для практики, розбору тем і закріплення матеріалу.',
+
+      'contact.label':        'Контакт',
+      'contact.title':        'Готові розпочати?',
+      'contact.lead':         'Напишіть мені — разом визначимо ваш рівень і підберемо зручний графік.',
+      'contact.email-label':  'Електронна пошта',
+      'contact.btn':          'Написати зараз →',
+    },
+
+    cs: {
+      'nav.about':        'O mně',
+      'nav.method':       'Metodika',
+      'nav.pricing':      'Ceny',
+      'nav.cta':          'Zapsat se',
+
+      'hero.tag':         'Výuka češtiny pro Ukrajince',
+      'hero.h1a':         'Mluvte česky',
+      'hero.h1b':         'plynule a sebejistě',
+      'hero.sub':         'Individuální i skupinové hodiny se zkušenou lektorkou s 10+ lety v České republice na úrovni rodilého mluvčího.',
+      'hero.cta1':        'Zapsat se na zkušební hodinu',
+      'hero.cta2':        'Zjistit více',
+
+      'stats.teaching':   'roky výukové praxe',
+      'stats.levels':     'úrovně výuky',
+      'stats.years':      'let v České republice',
+
+      'about.label':      'O mně',
+      'about.name':       'Kateryna Leshchenko',
+      'about.p1':         'Jmenuji se Kateryna a vedu individuální i skupinové hodiny, jejichž obsah se přizpůsobuje konkrétním požadavkům klientů.',
+      'about.p2':         'S češtinou jsem se setkala již na základní škole a od roku 2014 trvale žiji v České republice. To mi umožňuje nejen plynně ovládat jazyk na úrovni rodilého mluvčího, ale také hluboce rozumět sociokulturnímu kontextu, který je klíčový pro úspěšnou integraci cizinců v Česku.',
+      'about.p3':         'Během posledních tří let aktivně učím a pracuji se studenty od úrovně začátečník (A1) až po pokročilé (C1).',
+      'about.cert1':      'Státní certifikát o úspěšném složení zkoušky z češtiny CCE na úrovni C1.',
+      'about.cert2':      'Certifikát specializovaného metodického kurzu výuky češtiny jako cizího jazyka na Karlově univerzitě (Univerzita Karlova).',
+
+      'method.label':     'Metodika',
+      'method.title':     'Moderní přístup k výuce',
+      'method.lead':      'Žádné mechanické memorování pravidel. Jen živá výuka přes kontext a skutečnou komunikaci.',
+      'method.c1.title':  'Komunikativní přístup',
+      'method.c1.text':   'Důraz na skutečnou komunikaci od první hodiny. Učíte se mluvit – ne memorovat pravidla.',
+      'method.c2.title':  'Výuka přes kontext',
+      'method.c2.text':   'Slovní zásoba a gramatika se učí v živých, reálných situacích – tak si je přirozeně zapamatujete.',
+      'method.c3.title':  'Individuální program',
+      'method.c3.text':   'Každý kurz se přizpůsobí vaší úrovni, tempu a cílům – od každodenní komunikace až po obchodní češtinu.',
+
+      'pricing.label':    'Ceny',
+      'pricing.title':    'Ceny hodin',
+      'pricing.lead':     'Transparentní ceny bez skrytých poplatků. První zkušební hodina se dohodne individuálně.',
+      'pricing.d60':      '60 minut',
+      'pricing.d90':      '90 minut',
+      'pricing.per':      'CZK / hodina',
+      'pricing.n60':      'Ideální pro pravidelné hodiny a stabilní pokrok.',
+      'pricing.n90':      'Více času na praxi, procvičení témat a upevnění látky.',
+
+      'contact.label':        'Kontakt',
+      'contact.title':        'Připraveni začít?',
+      'contact.lead':         'Napište mi – společně určíme vaši úroveň a najdeme vhodný rozvrh.',
+      'contact.email-label':  'E-mail',
+      'contact.btn':          'Napsat nyní →',
+    }
+  };
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[lang][key] !== undefined) el.textContent = t[lang][key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    localStorage.setItem('lang', lang);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  const saved = localStorage.getItem('lang');
+  if (saved && saved !== 'uk') applyLang(saved);
+</script>
+
+</body>
+</html>
