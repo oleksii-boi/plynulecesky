@@ -533,6 +533,71 @@
 
     footer p { font-size: 0.85rem; color: #475569; }
     footer span { color: #64748b; }
+    footer a { color: #475569; text-decoration: underline; text-underline-offset: 3px; }
+    footer a:hover { color: #94a3b8; }
+
+    /* POLICY */
+    .policy { background: #f8fafc; border-top: 1px solid var(--border); }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .policy-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+    }
+
+    .policy-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .policy-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .policy-card li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .policy-card li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    .policy-note {
+      margin-top: 20px;
+      padding: 12px 16px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .policy-grid { grid-template-columns: 1fr; }
+    }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
@@ -706,9 +771,40 @@
   </div>
 </section>
 
+<!-- POLICY -->
+<section id="policy" class="policy">
+  <div class="container">
+    <div class="section-label" data-i18n="policy.label">Умови та повернення</div>
+    <h2 class="section-title" data-i18n="policy.title">Політика скасування та повернення коштів</h2>
+    <p class="section-lead" data-i18n="policy.lead">Будь ласка, ознайомтеся з умовами перед оплатою.</p>
+    <div class="policy-grid">
+      <div class="policy-card">
+        <h3>🗓 <span data-i18n="policy.cancel.title">Скасування та перенесення</span></h3>
+        <ul>
+          <li data-i18n="policy.cancel.l1">Скасування або перенесення за 24+ години до заняття — безкоштовно.</li>
+          <li data-i18n="policy.cancel.l2">Скасування менш ніж за 24 години — заняття вважається проведеним, кошти не повертаються.</li>
+          <li data-i18n="policy.cancel.l3">Неявка без попередження — заняття вважається проведеним.</li>
+          <li data-i18n="policy.cancel.l4">Перенесення за взаємною згодою можливе в будь-який час.</li>
+        </ul>
+      </div>
+      <div class="policy-card">
+        <h3>💳 <span data-i18n="policy.refund.title">Повернення коштів</span></h3>
+        <ul>
+          <li data-i18n="policy.refund.l1">Оплачені, але не проведені заняття (з дотриманням умов скасування) повертаються протягом 7 робочих днів на картку оплати.</li>
+          <li data-i18n="policy.refund.l2">Технічні проблеми з боку викладача: заняття переноситься або кошти повертаються повністю.</li>
+          <li data-i18n="policy.refund.l3">Повернення за вже проведені заняття не здійснюється.</li>
+        </ul>
+        <div class="policy-note" data-i18n="policy.refund.note">
+          Для вирішення питань щодо платежів звертайтесь: kateryna@plynulecesky.com
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Plynule česky &nbsp;·&nbsp; <span>Kateryna Leshchenko</span></p>
+  <p>© 2026 Plynule česky &nbsp;·&nbsp; <span>Kateryna Leshchenko</span> &nbsp;·&nbsp; <a href="#policy" data-i18n="footer.policy">Умови та повернення</a></p>
 </footer>
 
 <script>
@@ -762,6 +858,22 @@
       'contact.lead':         'Напишіть мені — разом визначимо ваш рівень і підберемо зручний графік.',
       'contact.email-label':  'Електронна пошта',
       'contact.btn':          'Написати зараз →',
+
+      'policy.label':         'Умови та повернення',
+      'policy.title':         'Політика скасування та повернення коштів',
+      'policy.lead':          'Будь ласка, ознайомтеся з умовами перед оплатою.',
+      'policy.cancel.title':  'Скасування та перенесення',
+      'policy.cancel.l1':     'Скасування або перенесення за 24+ години до заняття — безкоштовно.',
+      'policy.cancel.l2':     'Скасування менш ніж за 24 години — заняття вважається проведеним, кошти не повертаються.',
+      'policy.cancel.l3':     'Неявка без попередження — заняття вважається проведеним.',
+      'policy.cancel.l4':     'Перенесення за взаємною згодою можливе в будь-який час.',
+      'policy.refund.title':  'Повернення коштів',
+      'policy.refund.l1':     'Оплачені, але не проведені заняття (з дотриманням умов скасування) повертаються протягом 7 робочих днів на картку оплати.',
+      'policy.refund.l2':     'Технічні проблеми з боку викладача: заняття переноситься або кошти повертаються повністю.',
+      'policy.refund.l3':     'Повернення за вже проведені заняття не здійснюється.',
+      'policy.refund.note':   'Для вирішення питань щодо платежів звертайтесь: kateryna@plynulecesky.com',
+
+      'footer.policy':        'Умови та повернення',
     },
 
     cs: {
@@ -813,6 +925,22 @@
       'contact.lead':         'Napište mi – společně určíme vaši úroveň a najdeme vhodný rozvrh.',
       'contact.email-label':  'E-mail',
       'contact.btn':          'Napsat nyní →',
+
+      'policy.label':         'Podmínky a vrácení',
+      'policy.title':         'Zásady zrušení a vrácení plateb',
+      'policy.lead':          'Před platbou si prosím přečtěte podmínky.',
+      'policy.cancel.title':  'Zrušení a přesunutí',
+      'policy.cancel.l1':     'Zrušení nebo přesunutí 24+ hodin před hodinou – zdarma.',
+      'policy.cancel.l2':     'Zrušení méně než 24 hodin před hodinou – hodina je považována za odučenou, platba se nevrací.',
+      'policy.cancel.l3':     'Nedostavení se bez upozornění – hodina je považována za odučenou.',
+      'policy.cancel.l4':     'Přesunutí po vzájemné dohodě je možné kdykoliv.',
+      'policy.refund.title':  'Vrácení platby',
+      'policy.refund.l1':     'Zaplacené, ale neodučené hodiny (při dodržení podmínek zrušení) se vrátí do 7 pracovních dnů na platební kartu.',
+      'policy.refund.l2':     'Technické problémy na straně lektorky: hodina se přesune nebo se platba plně vrátí.',
+      'policy.refund.l3':     'Platby za již odučené hodiny se nevracejí.',
+      'policy.refund.note':   'Pro řešení otázek ohledně plateb kontaktujte: kateryna@plynulecesky.com',
+
+      'footer.policy':        'Podmínky a vrácení',
     }
   };
 
