@@ -536,6 +536,14 @@
     footer a { color: #475569; text-decoration: underline; text-underline-offset: 3px; }
     footer a:hover { color: #94a3b8; }
 
+    /* BOOKING */
+    .booking-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
     /* POLICY */
     .policy { background: #f8fafc; border-top: 1px solid var(--border); }
 
@@ -732,25 +740,16 @@
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- BOOKING -->
 <section id="pricing">
   <div class="container">
-    <div class="section-label" data-i18n="pricing.label">Ціни</div>
-    <h2 class="section-title" data-i18n="pricing.title">Вартість занять</h2>
-    <p class="section-lead" data-i18n="pricing.lead">Прозорі ціни без прихованих платежів. Перше пробне заняття обговорюється індивідуально.</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-duration" data-i18n="pricing.d60">60 хвилин</div>
-        <div class="price-amount">700</div>
-        <div class="price-currency" data-i18n="pricing.per">CZK / заняття</div>
-        <p class="price-note" data-i18n="pricing.n60">Ідеально для регулярних занять і стабільного прогресу.</p>
-      </div>
-      <div class="price-card featured">
-        <div class="price-duration" data-i18n="pricing.d90">90 хвилин</div>
-        <div class="price-amount">900</div>
-        <div class="price-currency" data-i18n="pricing.per">CZK / заняття</div>
-        <p class="price-note" data-i18n="pricing.n90">Більше часу для практики, розбору тем і закріплення матеріалу.</p>
-      </div>
+    <div class="section-label" data-i18n="booking.label">Запис на заняття</div>
+    <h2 class="section-title" data-i18n="booking.title">Оберіть зручний час</h2>
+    <p class="section-lead" data-i18n="booking.lead">Оберіть зручний слот — підтвердження надійде на вашу пошту автоматично.</p>
+    <div class="booking-frame">
+      <!-- Google Calendar Appointment Scheduling begin -->
+      <iframe src="https://calendar.google.com/calendar/appointments/AcZssZ3UrU_S0iL1X-BiwBv8k2ySTZo2Eem1Zz70jWw=?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+      <!-- end Google Calendar Appointment Scheduling -->
     </div>
   </div>
 </section>
@@ -812,7 +811,7 @@
     uk: {
       'nav.about':        'Про мене',
       'nav.method':       'Методика',
-      'nav.pricing':      'Ціни',
+      'nav.pricing':      'Запис',
       'nav.cta':          'Записатись',
 
       'hero.tag':         'Курси чеської мови для українців',
@@ -844,14 +843,9 @@
       'method.c3.title':  'Індивідуальна програма',
       'method.c3.text':   'Кожен курс адаптується під ваш рівень, темп і цілі — від побутового спілкування до ділової чеської.',
 
-      'pricing.label':    'Ціни',
-      'pricing.title':    'Вартість занять',
-      'pricing.lead':     'Прозорі ціни без прихованих платежів. Перше пробне заняття обговорюється індивідуально.',
-      'pricing.d60':      '60 хвилин',
-      'pricing.d90':      '90 хвилин',
-      'pricing.per':      'CZK / заняття',
-      'pricing.n60':      'Ідеально для регулярних занять і стабільного прогресу.',
-      'pricing.n90':      'Більше часу для практики, розбору тем і закріплення матеріалу.',
+      'booking.label':    'Запис на заняття',
+      'booking.title':    'Оберіть зручний час',
+      'booking.lead':     'Оберіть зручний слот — підтвердження надійде на вашу пошту автоматично.',
 
       'contact.label':        'Контакт',
       'contact.title':        'Готові розпочати?',
@@ -879,7 +873,7 @@
     cs: {
       'nav.about':        'O mně',
       'nav.method':       'Metodika',
-      'nav.pricing':      'Ceny',
+      'nav.pricing':      'Rezervace',
       'nav.cta':          'Zapsat se',
 
       'hero.tag':         'Výuka češtiny pro Ukrajince',
@@ -911,14 +905,9 @@
       'method.c3.title':  'Individuální program',
       'method.c3.text':   'Každý kurz se přizpůsobí vaší úrovni, tempu a cílům – od každodenní komunikace až po obchodní češtinu.',
 
-      'pricing.label':    'Ceny',
-      'pricing.title':    'Ceny hodin',
-      'pricing.lead':     'Transparentní ceny bez skrytých poplatků. První zkušební hodina se dohodne individuálně.',
-      'pricing.d60':      '60 minut',
-      'pricing.d90':      '90 minut',
-      'pricing.per':      'CZK / hodina',
-      'pricing.n60':      'Ideální pro pravidelné hodiny a stabilní pokrok.',
-      'pricing.n90':      'Více času na praxi, procvičení témat a upevnění látky.',
+      'booking.label':    'Rezervace hodiny',
+      'booking.title':    'Vyberte si vhodný čas',
+      'booking.lead':     'Vyberte si volný termín – potvrzení vám přijde automaticky na e-mail.',
 
       'contact.label':        'Kontakt',
       'contact.title':        'Připraveni začít?',
