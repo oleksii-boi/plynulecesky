@@ -1,0 +1,46 @@
+[
+  {
+    "question": "Jak si mám správně naplánovat lekci?",
+    "answer": "Můžete si vybrat vhodný čas přes kalendář, nebo mi napsat osobně a domluvit rozvrh přímo. Čas si můžete rezervovat na měsíc až dva dopředu zakoupením balíčku, nebo si vybírat čas zvlášť pro každou lekci. Záleží na vašem rozvrhu. Při rezervaci lekcí dopředu balíčkem je větší pravděpodobnost vybrat si nejvhodnější čas."
+  },
+  {
+    "question": "Co je to balíček lekcí?",
+    "answer": "Jedná se o předem zaplacené lekce podle domluveného rozvrhu, nebo zaplacený počet lekcí s dobou platnosti. V případě změn lze lekci přesunout na následující měsíc. Přesunutou lekci již nelze přesunout podruhé. Při platbě za 4 až 7 lekcí platí sleva 5 %, při platbě za 8 a více lekcí sleva 10 %."
+  },
+  {
+    "question": "Jak funguje platba za lekce?",
+    "answer": "Platba probíhá ihned jak při rezervaci lekce přes kalendář, tak při domluvě rozvrhu přímo. V případě problémů s online platbou mi prosím napište."
+  },
+  {
+    "question": "Mohu zaplatit za lekci později?",
+    "answer": "Ano, v takovém případě se rezervace drží jeden kalendářní týden, nejpozději však 48 hodin před lekcí."
+  },
+  {
+    "question": "Jak mohu lekci zrušit nebo přesunout?",
+    "answer": "Bezplatné přesunutí je možné nejpozději 24 hodin před začátkem lekce. Při pozdějším zrušení se lekce počítá jako odučená."
+  },
+  {
+    "question": "Musím si kupovat učebnice?",
+    "answer": "Online materiály a elektronické verze učebnic posílám zdarma, pro větší efektivitu a pohodlí však doporučuji pořídit si i tištěnou verzi."
+  },
+  {
+    "question": "Co mám dělat, když se opozdím na lekci?",
+    "answer": "Prvních 15 minut na studenta čekám na platformě pro výuku, v případě jeho nepřítomnosti se lekce počítá jako odučená."
+  },
+  {
+    "question": "Jak zjistím svou aktuální úroveň češtiny?",
+    "answer": "Aktuální úroveň, cíle a plán lekcí se určují na zkušební lekci nebo na první lekci."
+  },
+  {
+    "question": "Musím vždy dělat domácí úkoly?",
+    "answer": "Ne, není to povinné. To, jakým způsobem a jak rychle budete v učení postupovat, závisí jen na vás. Samozřejmě vždy poradím, co je vhodné si zopakovat a procvičit do další lekce, ale to, jak intenzivně budete pracovat mimo náš společný čas, závisí výhradně na vašich možnostech."
+  },
+  {
+    "question": "Od jakého věku přijímáte studenty?",
+    "answer": "Od 16 let. Pracuji převážně s dospělými."
+  },
+  {
+    "question": "Kolik času potřebuji na přípravu ke zkoušce na trvalý pobyt (A2) nebo občanství (B1)?",
+    "answer": "Vše záleží na vaší aktuální úrovni, intenzitě lekcí a plnění domácích úkolů. Průměrně příprava od nuly do úrovně A2 trvá 5 měsíců při intenzitě 3 lekce týdně."
+  }
+]

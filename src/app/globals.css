@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 100% 96%;
+    --foreground: 216 29% 5%;
+
+    --card: 207 100% 99%;
+    --card-foreground: 216 29% 5%;
+
+    --primary: 218 24% 12%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 208 100% 90%;
+    --secondary-foreground: 216 29% 5%;
+
+    --muted: 220 12% 97%;
+    --muted-foreground: 218 8% 35%;
+
+    --accent: 212 100% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 212 100% 44%;
+
+    --radius: 2rem;
+
+    --lavender: #f1e6ff;
+    --mint: #d3f6e3;
+    --powder: #cce7ff;
+    --peach: #ffd9c6;
+    --solar: #fff2be;
+    --ink: #0a0d12;
+    --charcoal: #181d27;
+    --graphite: #535862;
+    --fog: #757b85;
+    --iris: #0069e0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    @apply bg-secondary text-foreground;
+  }
+}
+
+@layer utilities {
+  .section-shell {
+    @apply mx-auto max-w-[1200px] px-6 py-20 md:py-28 lg:py-32;
+  }
+
+  .section-title {
+    @apply text-balance text-4xl font-medium leading-[1.08] tracking-[-0.02em] text-foreground md:text-6xl;
+  }
+
+  .paper-card {
+    @apply rounded-[2rem] bg-card;
+  }
+
+  .iris-frame {
+    background:
+      linear-gradient(#ebf5ff, #ebf5ff) padding-box,
+      linear-gradient(145deg, #479dff 11%, #0069e0 78%) border-box;
+    border: 3px solid transparent;
+  }
+}
+
+/* Respect the OS-level reduced-motion preference (covers the accordion's
+   open/close keyframes and any future transitions/animations) rather than
+   forcing motion on everyone regardless of their settings. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
