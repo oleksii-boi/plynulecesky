@@ -18,6 +18,19 @@ test("homepage has a canonical link and OG tags", async ({ page }) => {
   );
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", /.+/);
   await expect(page.locator('meta[property="og:description"]')).toHaveAttribute("content", /.+/);
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    "content",
+    "https://plynulecesky.cz/images/og.jpg"
+  );
+});
+
+test("homepage exposes favicon and apple touch icon", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator('link[rel="icon"]').first()).toHaveAttribute("href", /favicon/);
+  await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveAttribute(
+    "href",
+    "/apple-touch-icon.png"
+  );
 });
 
 test("sitemap.xml and robots.txt are generated", async ({ page, request, baseURL }) => {

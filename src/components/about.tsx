@@ -6,15 +6,13 @@ export function About({ dict }: { dict: Dictionary }) {
   return (
     <section id="about" className="section-shell scroll-mt-28">
       <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
-        <div className="relative min-h-[440px] overflow-hidden rounded-[2rem] bg-[var(--lavender)]">
-          <div className="absolute -right-12 -top-12 size-52 rounded-full bg-white/55" />
-          <div className="absolute bottom-[-4rem] left-[-3rem] size-64 rounded-full bg-[#e4ccff]" />
+        <div className="relative h-[520px] w-full overflow-hidden rounded-[2rem] bg-[#BBBBBB] md:h-[640px] lg:h-auto lg:min-h-[440px]">
           <Image
-            src="/images/kateryna.png"
+            src="/images/kateryna-transparent.png"
             alt={dict.about.photoAlt}
             fill
-            sizes="(min-width: 1024px) 440px, 100vw"
-            className="z-10 origin-bottom scale-[1.18] object-contain object-bottom"
+            sizes="(min-width: 1024px) 440px, (min-width: 768px) 520px, 100vw"
+            className="origin-bottom translate-y-6 scale-[0.94] object-contain object-bottom"
           />
         </div>
 

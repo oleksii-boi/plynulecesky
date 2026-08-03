@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "seo:assets": "node scripts/generate-seo-assets.cjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
