@@ -43,6 +43,16 @@ export function generateMetadata({
       template: "%s — Plynule česky",
     },
     description,
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    },
+    manifest: "/site.webmanifest",
     alternates: {
       canonical: canonicalPaths[locale],
       languages: {
@@ -55,10 +65,22 @@ export function generateMetadata({
       description,
       url: canonicalPaths[locale],
       siteName: "Plynule česky",
-      // TODO: swap for a real 1200x630 OG image before launch.
-      images: ["/images/og.jpg"],
+      images: [
+        {
+          url: "/images/og.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Plynule česky — Kateryna Leshchenko",
+        },
+      ],
       locale: localeTags[locale],
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Plynule česky — Kateryna Leshchenko",
+      description,
+      images: ["/images/og.jpg"],
     },
   };
 }

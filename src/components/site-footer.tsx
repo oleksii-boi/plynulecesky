@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, Send } from "lucide-react";
 import { BOOKING_LINKS, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/contact";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
@@ -42,9 +43,13 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
 
         <div className="mt-12 flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-3">
-              <span className="iris-frame flex size-9 items-center justify-center rounded-full text-sm font-medium text-accent">
-                P
-              </span>
+              <Image
+                src="/images/brand-glyph.svg"
+                alt=""
+                width={27}
+                height={39}
+                className="h-9 w-auto"
+              />
               <span className="text-lg font-medium tracking-[-0.02em]">{dict.brand}</span>
             </div>
             <a
