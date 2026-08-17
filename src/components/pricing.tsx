@@ -49,6 +49,11 @@ export function Pricing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
                       className="py-5 pr-4 text-left text-sm font-medium leading-6 md:text-base"
                     >
                       {row.label}
+                      {row.note ? (
+                        <span className="block text-xs font-normal text-muted-foreground md:inline md:text-sm md:before:content-['_·_']">
+                          {row.note}
+                        </span>
+                      ) : null}
                     </th>
                     <td className="py-5 px-3 text-right text-lg font-medium tracking-[-0.02em] md:text-xl">
                       {formatCurrency(rates.min60, locale)}

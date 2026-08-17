@@ -30,7 +30,7 @@ export interface Dictionary {
     heading: string;
     paragraphs: string[];
     credentialsHeading: string;
-    credentials: string[];
+    credentials: { text: string; href: string; linkLabel: string }[];
     photoAlt: string;
   };
   specialization: {
@@ -56,6 +56,7 @@ export interface Dictionary {
     rows: {
       key: "individual" | "individualPackage" | "group";
       label: string;
+      note?: string;
     }[];
     trialLabel: string;
     ctaLabel: string;
@@ -122,8 +123,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       credentialsHeading: "Моя професійна кваліфікація підтверджена:",
       credentials: [
-        "Державний сертифікат про успішне складання іспиту з чеської мови CCE на рівні C1.",
-        "Сертифікат про проходження спеціалізованого методичного курсу з викладання чеської мови як іноземної при Карловому університеті (Univerzita Karlova).",
+        {
+          text: "Державний сертифікат про успішне складання іспиту з чеської мови CCE на рівні C1.",
+          href: "/documents/cce-c1-certifikat.pdf",
+          linkLabel: "Переглянути сертифікат CCE C1 (PDF)",
+        },
+        {
+          text: "Сертифікат про проходження спеціалізованого методичного курсу з викладання чеської мови як іноземної при Карловому університеті (Univerzita Karlova).",
+          href: "/documents/zkuc-metodicky-kurz.pdf",
+          linkLabel: "Переглянути сертифікат методичного курсу (PDF)",
+        },
       ],
       photoAlt: "Катерина Лещенко",
     },
@@ -179,9 +188,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subheading: "Прозорі ціни без прихованих платежів.",
       columns: { min60: "60 хвилин", min90: "90 хвилин" },
       rows: [
-        { key: "individual", label: "Індивідуальне заняття (до 4 занять на місяць)" },
-        { key: "individualPackage", label: "Індивідуальне заняття (від 5 занять на місяць)" },
-        { key: "group", label: "Групове заняття 2–4 особи" },
+        {
+          key: "individual",
+          label: "Індивідуальне заняття",
+          note: "до 4 занять на місяць",
+        },
+        {
+          key: "individualPackage",
+          label: "Індивідуальне заняття",
+          note: "від 5 занять на місяць",
+        },
+        { key: "group", label: "Групове заняття", note: "2–4 особи" },
       ],
       trialLabel: "Пробне заняття (45 хвилин)",
       ctaLabel: "Записатись на пробне заняття",
@@ -224,8 +241,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       credentialsHeading: "Moje odborná kvalifikace je potvrzena:",
       credentials: [
-        "Státní certifikát o úspěšném složení zkoušky z českého jazyka CCE na úrovni C1.",
-        "Certifikát o absolvování specializovaného metodického kurzu výuky češtiny jako cizího jazyka na Univerzitě Karlově.",
+        {
+          text: "Státní certifikát o úspěšném složení zkoušky z českého jazyka CCE na úrovni C1.",
+          href: "/documents/cce-c1-certifikat.pdf",
+          linkLabel: "Zobrazit certifikát CCE C1 (PDF)",
+        },
+        {
+          text: "Certifikát o absolvování specializovaného metodického kurzu výuky češtiny jako cizího jazyka na Univerzitě Karlově.",
+          href: "/documents/zkuc-metodicky-kurz.pdf",
+          linkLabel: "Zobrazit certifikát metodického kurzu (PDF)",
+        },
       ],
       photoAlt: "Kateryna Leshchenko",
     },
@@ -281,9 +306,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subheading: "Transparentní ceny bez skrytých poplatků.",
       columns: { min60: "60 minut", min90: "90 minut" },
       rows: [
-        { key: "individual", label: "Individuální lekce (do 4 lekcí měsíčně)" },
-        { key: "individualPackage", label: "Individuální lekce (od 5 lekcí měsíčně)" },
-        { key: "group", label: "Skupinová lekce 2–4 osoby" },
+        {
+          key: "individual",
+          label: "Individuální lekce",
+          note: "do 4 lekcí měsíčně",
+        },
+        {
+          key: "individualPackage",
+          label: "Individuální lekce",
+          note: "od 5 lekcí měsíčně",
+        },
+        { key: "group", label: "Skupinová lekce", note: "2–4 osoby" },
       ],
       trialLabel: "Zkušební lekce (45 minut)",
       ctaLabel: "Zarezervovat zkušební lekci",

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BadgeCheck } from "lucide-react";
+import { ArrowUpRight, BadgeCheck } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 export function About({ dict }: { dict: Dictionary }) {
@@ -43,12 +43,23 @@ export function About({ dict }: { dict: Dictionary }) {
           </h3>
           <ul className="mt-3 space-y-2">
             {dict.about.credentials.map((credential) => (
-              <li
-                key={credential}
-                className="flex gap-3 rounded-2xl bg-background/75 p-4 text-sm font-medium leading-6 text-card-foreground"
-              >
-                <BadgeCheck className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
-                <span>{credential}</span>
+              <li key={credential.text}>
+                <a
+                  href={credential.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={credential.linkLabel}
+                  className="flex cursor-pointer gap-3 rounded-2xl bg-background/75 p-4 text-sm font-medium leading-6 text-card-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  <BadgeCheck className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
+                  <span className="underline decoration-accent/40 underline-offset-4">
+                    {credential.text}
+                    <ArrowUpRight
+                      className="ml-1 inline size-4 shrink-0 -translate-y-px text-accent opacity-60"
+                      aria-hidden
+                    />
+                  </span>
+                </a>
               </li>
             ))}
           </ul>

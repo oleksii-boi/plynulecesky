@@ -12,7 +12,12 @@ describe("About", () => {
       expect(screen.getByText(paragraph)).toBeInTheDocument();
     }
     for (const credential of dict.about.credentials) {
-      expect(screen.getByText(credential)).toBeInTheDocument();
+      expect(screen.getByText(credential.text)).toBeInTheDocument();
+
+      const link = screen.getByRole("link", { name: credential.linkLabel });
+      expect(link).toHaveAttribute("href", credential.href);
+      expect(link).toHaveAttribute("target", "_blank");
+      expect(link).toHaveAttribute("rel", "noreferrer");
     }
     // Two responsive portrait variants: mobile/desktop and the tablet float.
     expect(screen.getAllByRole("img", { name: dict.about.photoAlt })).toHaveLength(2);
