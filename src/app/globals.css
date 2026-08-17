@@ -44,6 +44,15 @@
     @apply border-border;
   }
 
+  html {
+    /* Every #anchor jump stops 6rem down: the sticky header is 73px tall,
+       so this clears it and leaves a little breathing room above whatever
+       the anchor points at. Sections additionally cancel their own top
+       padding (see the -scroll-mt-* classes on each section id) so the jump
+       lands on the heading, not on a screenful of section padding. */
+    scroll-padding-top: 6rem;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     letter-spacing: -0.01em;

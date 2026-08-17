@@ -41,7 +41,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
     // id="contact" preserves the old live site's #contact anchor (same
     // "ready to start? email me" content lived there) so any external
     // links/bookmarks to plynulecesky.cz/#contact keep working.
-    <footer id="contact" className="scroll-mt-28">
+    <footer id="contact" className="-scroll-mt-20 md:-scroll-mt-28 lg:-scroll-mt-32">
       <div className="section-shell pb-8">
         <div className="grid gap-10 rounded-[2rem] bg-primary p-8 text-primary-foreground md:p-12 lg:grid-cols-[1fr_auto] lg:items-center lg:p-14">
           <div>

@@ -4,7 +4,7 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 export function About({ dict }: { dict: Dictionary }) {
   return (
-    <section id="about" className="section-shell scroll-mt-28">
+    <section id="about" className="section-shell -scroll-mt-20 md:-scroll-mt-28 lg:-scroll-mt-32">
       <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
         <div className="relative h-[520px] w-full overflow-hidden rounded-[2rem] bg-[#BBBBBB] md:hidden lg:block lg:h-auto lg:min-h-[440px]">
           <Image

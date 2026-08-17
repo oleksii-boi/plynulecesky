@@ -16,7 +16,7 @@ const iconColors = [
 // still gets a stable id for deep-linking/testing.
 export function Specialization({ dict }: { dict: Dictionary }) {
   return (
-    <section id="specialization" className="section-shell scroll-mt-28">
+    <section id="specialization" className="section-shell -scroll-mt-20 md:-scroll-mt-28 lg:-scroll-mt-32">
       {/* Old live site's nav had "Методика" (#method) pointing at roughly
           this content — kept as a zero-height anchor so old #method links
           still land in the right place instead of a dead jump-to-top. */}

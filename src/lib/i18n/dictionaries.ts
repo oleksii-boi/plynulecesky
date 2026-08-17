@@ -234,7 +234,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heading: "Mluvte česky plynule a sebejistě",
       subheading:
         "Individuální a skupinové lekce se zkušenou lektorkou s více než 10 lety znalosti jazyka na úrovni rodilého mluvčího.",
-      ctaPrimary: "Přihlásit se na zkušební lekci",
+      ctaPrimary: "Zarezervovat zkušební lekci",
       ctaSecondary: "Zjistit více",
       stats: [
         { value: "8+", label: "roky pedagogické praxe" },
@@ -342,7 +342,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       heading: "Jste připraveni začít?",
       body: "Napište mi — společně určíme vaši úroveň a domluvíme vhodný rozvrh. Stačí napsat nebo si rovnou zarezervovat první lekci.",
-      trialCta: "Přihlásit se na zkušební lekci",
+      trialCta: "Zarezervovat zkušební lekci",
       emailCta:
         "Pokud máte dotaz, problém s platbou nebo chcete zanechat recenzi, kontaktujte mě",
       termsLabel: "Podmínky a vrácení peněz",

@@ -8,7 +8,7 @@ export function Pricing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
   const p = dict.pricing;
 
   return (
-    <section id="pricing" className="scroll-mt-28">
+    <section id="pricing" className="-scroll-mt-20 md:-scroll-mt-28 lg:-scroll-mt-32">
       <div className="section-shell">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="section-title">{p.heading}</h2>
@@ -68,7 +68,7 @@ export function Pricing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
           </table>
         </div>
 
-        <div className="mx-auto mt-5 flex max-w-3xl flex-col items-center gap-6 rounded-[2rem] bg-[var(--powder)] p-6 text-center md:flex-row md:justify-between md:p-10 md:text-left">
+        <div className="mx-auto mt-5 flex max-w-3xl items-center justify-between gap-3 rounded-[2rem] bg-[var(--powder)] p-5 text-left md:gap-6 md:p-10">
           <div>
             <p className="text-lg font-medium tracking-[-0.01em] md:text-xl">
               {p.trialLabel}
@@ -80,7 +80,13 @@ export function Pricing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
               {formatCurrency(RATES.trial.min45, locale)}
             </p>
           </div>
-          <Button asChild size="lg">
+          {/* Stays side-by-side with the price down to the narrowest phones,
+              so the CTA label wraps and shrinks instead of the row stacking. */}
+          <Button
+            asChild
+            size="lg"
+            className="h-auto min-h-12 whitespace-normal px-5 py-3 text-center text-sm md:px-8 md:text-base"
+          >
             <a href={BOOKING_LINKS.trial} target="_blank" rel="noreferrer">
               {p.ctaLabel}
             </a>

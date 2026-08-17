@@ -12,7 +12,7 @@ export function Faq({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const items = getFaqItems(locale);
 
   return (
-    <section id="faq" className="section-shell scroll-mt-28 md:pt-16">
+    <section id="faq" className="section-shell -scroll-mt-20 md:-scroll-mt-16 md:pt-16">
       <div className="mx-auto max-w-3xl">
         <div className="text-center">
           <h2 className="section-title">{dict.faq.heading}</h2>

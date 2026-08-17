@@ -8,7 +8,10 @@ import type { Locale } from "@/lib/i18n/locales";
 export function Testimonials({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const { items, isPlaceholder } = getTestimonials(locale);
   return (
-    <section id="testimonials" className="scroll-mt-28 overflow-hidden">
+    <section
+      id="testimonials"
+      className="overflow-hidden -scroll-mt-20 md:-scroll-mt-28 lg:-scroll-mt-32"
+    >
       <div className="section-shell">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="section-title">{dict.testimonials.heading}</h2>

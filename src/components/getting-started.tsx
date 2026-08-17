@@ -4,7 +4,7 @@ export function GettingStarted({ dict }: { dict: Dictionary }) {
   const gs = dict.gettingStarted;
 
   return (
-    <section id="getting-started" className="section-shell scroll-mt-28">
+    <section id="getting-started" className="section-shell -scroll-mt-20 md:-scroll-mt-28 lg:-scroll-mt-32">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="section-title">{gs.heading}</h2>
       </div>
