@@ -68,7 +68,7 @@ export function Pricing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
           </table>
         </div>
 
-        <div className="mx-auto mt-5 flex max-w-3xl items-center justify-between gap-3 rounded-[2rem] bg-[var(--powder)] p-5 text-left md:gap-6 md:p-10">
+        <div className="mx-auto mt-5 flex max-w-3xl flex-col items-center gap-6 rounded-[2rem] bg-[var(--powder)] p-6 text-center md:flex-row md:justify-between md:p-10 md:text-left">
           <div>
             <p className="text-lg font-medium tracking-[-0.01em] md:text-xl">
               {p.trialLabel}
@@ -80,13 +80,7 @@ export function Pricing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
               {formatCurrency(RATES.trial.min45, locale)}
             </p>
           </div>
-          {/* Stays side-by-side with the price down to the narrowest phones,
-              so the CTA label wraps and shrinks instead of the row stacking. */}
-          <Button
-            asChild
-            size="lg"
-            className="h-auto min-h-12 whitespace-normal px-5 py-3 text-center text-sm md:px-8 md:text-base"
-          >
+          <Button asChild size="lg">
             <a href={BOOKING_LINKS.trial} target="_blank" rel="noreferrer">
               {p.ctaLabel}
             </a>
