@@ -45,9 +45,14 @@ test("sitemap.xml and robots.txt are generated", async ({ page, request, baseURL
 
 test("homepage embeds valid JSON-LD structured data", async ({ page }) => {
   await page.goto("/");
-  const json = await page.locator('script[type="application/ld+json"]').textContent();
-  expect(json).toBeTruthy();
-  const data = JSON.parse(json ?? "{}");
-  expect(data["@type"]).toBe("Person");
-  expect(data.email).toContain("@");
+  // Two blocks: EducationalOrganization from the layout, Person from the page.
+  const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+  expect(blocks.length).toBeGreaterThan(0);
+
+  const entries = blocks.map((block) => JSON.parse(block));
+  expect(entries.map((entry) => entry["@type"])).toContain("EducationalOrganization");
+
+  const person = entries.find((entry) => entry["@type"] === "Person");
+  expect(person).toBeTruthy();
+  expect(person.email).toContain("@");
 });

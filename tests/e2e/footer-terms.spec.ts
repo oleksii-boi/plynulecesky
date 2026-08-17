@@ -41,8 +41,11 @@ for (const locale of ["uk", "cs"] as const) {
 
 test("footer social/email links are not dead hrefs", async ({ page }) => {
   await page.goto("/uk/");
+  const footer = page.getByRole("contentinfo");
   for (const name of ["Email", "Telegram"]) {
-    const link = page.getByRole("link", { name });
+    // Exact match against the aria-labelled icon links: a substring match would
+    // also catch the "Написати в Telegram" CTAs in the hero and contact block.
+    const link = footer.getByRole("link", { name, exact: true });
     await expect(link).toHaveAttribute("href", /.+/);
   }
 });
