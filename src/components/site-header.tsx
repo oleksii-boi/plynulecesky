@@ -98,7 +98,7 @@ export function SiteHeader({
           >
             {dict.hero.ctaPrimary}
           </a>
-          <LanguageSwitcher locale={locale} pathname={pathname} sectionId={activeId} />
+          <LanguageSwitcher locale={locale} pathname={pathname} sectionId={null} />
           <button
             type="button"
             aria-label={menuLabel}

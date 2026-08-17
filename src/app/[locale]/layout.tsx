@@ -28,12 +28,12 @@ const canonicalPaths: Record<Locale, string> = {
 // searches («уроки чеської мови онлайн», «чеська для українців»,
 // "výuka češtiny pro Ukrajince/cizince"), not just the brand name.
 const metaTitles: Record<Locale, string> = {
-  uk: "Уроки чеської мови онлайн для українців — Plynule česky",
-  cs: "Výuka češtiny pro Ukrajince online — Plynule česky",
+  uk: "Уроки чеської мови онлайн — Plynule česky",
+  cs: "Výuka češtiny online — Plynule česky",
 };
 
 const metaDescriptions: Record<Locale, string> = {
-  uk: "Уроки чеської мови онлайн для українців. Індивідуальні та групові заняття рівнів A1–C1, підготовка до іспиту на ПМЖ (trvalý pobyt) та вступу до вишів. Викладач Катерина Лещенко живе в Чехії з 2014 року. Запис онлайн.",
+  uk: "Уроки чеської мови онлайн. Індивідуальні та групові заняття рівнів A1–C1, підготовка до іспиту на ПМЖ (trvalý pobyt) та вступу до вишів. Викладач Катерина Лещенко живе в Чехії з 2014 року. Запис онлайн.",
   cs: "Výuka češtiny pro Ukrajince a cizince online. Individuální a skupinové lekce úrovní A1–C1, příprava na zkoušku pro trvalý pobyt i přijímací zkoušky na VŠ. Lektorka Kateryna Leshchenko, certifikát Univerzity Karlovy. Online rezervace.",
 };
 
