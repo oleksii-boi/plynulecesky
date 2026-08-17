@@ -3,11 +3,11 @@ import { test, expect } from "@playwright/test";
 test("homepage declares hreflang alternates for both locales", async ({ page }) => {
   await page.goto("/");
   const links = page.locator('link[rel="alternate"][hreflang]');
-  await expect(links).toHaveCount(2);
+  await expect(links).toHaveCount(3);
   const hreflangs = await links.evaluateAll((els) =>
     els.map((el) => el.getAttribute("hreflang"))
   );
-  expect(hreflangs.sort()).toEqual(["cs", "uk"]);
+  expect(hreflangs.sort()).toEqual(["cs", "uk", "x-default"]);
 });
 
 test("homepage has a canonical link and OG tags", async ({ page }) => {

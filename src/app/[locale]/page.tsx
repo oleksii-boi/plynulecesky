@@ -11,6 +11,7 @@ import { BookingFallback } from "@/components/booking-fallback";
 import { Faq } from "@/components/faq";
 import { SiteFooter } from "@/components/site-footer";
 import { CONTACT_EMAIL } from "@/lib/contact";
+import { getFaqItems } from "@/lib/faq";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -19,6 +20,14 @@ export function generateStaticParams() {
 // Every nav anchor (#about, #testimonials, #getting-started, #pricing,
 // #faq) now has real content behind it — Slice 9 adds the footer/contact
 // section below Faq, which isn't itself a nav item.
+
+// Schema.org expects an actual occupation here; dict.about.eyebrow is the
+// section label ("Про мене"/"O mně"), not a job title.
+const jobTitles: Record<Locale, string> = {
+  uk: "Викладачка чеської мови",
+  cs: "Lektorka češtiny",
+};
+
 export default function HomePage({ params }: { params: { locale: string } }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : "uk";
   const dict = getDictionary(locale);
@@ -28,7 +37,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Kateryna Leshchenko",
-    jobTitle: dict.about.eyebrow,
+    jobTitle: jobTitles[locale],
     email: CONTACT_EMAIL,
     url: "https://plynulecesky.cz/",
     knowsLanguage: ["uk", "cs"],
@@ -40,12 +49,30 @@ export default function HomePage({ params }: { params: { locale: string } }) {
     })),
   };
 
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: getFaqItems(locale).map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
       {/* eslint-disable-next-line react/no-danger -- static, locally-built JSON-LD, not user input */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      {/* eslint-disable-next-line react/no-danger -- static, locally-built JSON-LD, not user input */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <SiteHeader locale={locale} pathname={pathname} dict={dict} />
       <main>

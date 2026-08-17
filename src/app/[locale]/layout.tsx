@@ -24,9 +24,17 @@ const canonicalPaths: Record<Locale, string> = {
   cs: "/cs/",
 };
 
+// Titles/descriptions lead with the phrases the audience actually
+// searches («уроки чеської мови онлайн», «чеська для українців»,
+// "výuka češtiny pro Ukrajince/cizince"), not just the brand name.
+const metaTitles: Record<Locale, string> = {
+  uk: "Уроки чеської мови онлайн для українців — Plynule česky",
+  cs: "Výuka češtiny pro Ukrajince online — Plynule česky",
+};
+
 const metaDescriptions: Record<Locale, string> = {
-  uk: "Чеська мова з викладачем Катериною Лещенко. Індивідуальні та групові заняття рівнів A1–C1. Сертифікат Карлового університету. Запис на заняття онлайн.",
-  cs: "Čeština s lektorkou Katerynou Leshchenko. Individuální a skupinové lekce úrovní A1–C1. Certifikát Univerzity Karlovy. Online rezervace lekcí.",
+  uk: "Уроки чеської мови онлайн для українців. Індивідуальні та групові заняття рівнів A1–C1, підготовка до іспиту на ПМЖ (trvalý pobyt) та вступу до вишів. Викладач Катерина Лещенко живе в Чехії з 2014 року. Запис онлайн.",
+  cs: "Výuka češtiny pro Ukrajince a cizince online. Individuální a skupinové lekce úrovní A1–C1, příprava na zkoušku pro trvalý pobyt i přijímací zkoušky na VŠ. Lektorka Kateryna Leshchenko, certifikát Univerzity Karlovy. Online rezervace.",
 };
 
 export function generateMetadata({
@@ -35,12 +43,13 @@ export function generateMetadata({
   params: { locale: string };
 }): Metadata {
   const locale: Locale = isLocale(params.locale) ? params.locale : "uk";
+  const title = metaTitles[locale];
   const description = metaDescriptions[locale];
 
   return {
     metadataBase: new URL("https://plynulecesky.cz"),
     title: {
-      default: "Plynule česky — Kateryna Leshchenko",
+      default: title,
       template: "%s — Plynule česky",
     },
     description,
@@ -59,10 +68,11 @@ export function generateMetadata({
       languages: {
         uk: canonicalPaths.uk,
         cs: canonicalPaths.cs,
+        "x-default": canonicalPaths.uk,
       },
     },
     openGraph: {
-      title: "Plynule česky — Kateryna Leshchenko",
+      title,
       description,
       url: canonicalPaths[locale],
       siteName: "Plynule česky",
@@ -79,7 +89,7 @@ export function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Plynule česky — Kateryna Leshchenko",
+      title,
       description,
       images: ["/images/og.jpg"],
     },
