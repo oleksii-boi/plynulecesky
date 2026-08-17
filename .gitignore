@@ -16,6 +16,9 @@
 .env.local
 .env*.local
 
+# editors
+.idea/
+
 # misc
 .DS_Store
 *.pem

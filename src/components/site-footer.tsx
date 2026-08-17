@@ -1,6 +1,11 @@
 import Image from "next/image";
-import { Mail, Send } from "lucide-react";
-import { BOOKING_LINKS, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/contact";
+import { GraduationCap, Mail, Send } from "lucide-react";
+import {
+  BOOKING_LINKS,
+  CONTACT_EMAIL,
+  SOCIAL_LINKS,
+  mailtoHref,
+} from "@/lib/contact";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 // Legal pages are Czech-only by decision — every locale's footer links
@@ -10,6 +15,27 @@ const PRIVACY_HREF = "/cs/terms/";
 
 export function SiteFooter({ dict }: { dict: Dictionary }) {
   const year = new Date().getFullYear();
+
+  const contactCtas = [
+    {
+      label: dict.footer.trialCta,
+      href: BOOKING_LINKS.trial,
+      icon: GraduationCap,
+      external: true,
+    },
+    {
+      label: dict.gettingStarted.fallbackTelegramCta,
+      href: SOCIAL_LINKS.telegram,
+      icon: Send,
+      external: true,
+    },
+    {
+      label: dict.gettingStarted.fallbackCta,
+      href: mailtoHref(dict.gettingStarted.fallbackEmailSubject),
+      icon: Mail,
+      external: false,
+    },
+  ];
 
   return (
     // id="contact" preserves the old live site's #contact anchor (same
@@ -26,16 +52,16 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
               {dict.footer.body}
             </p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-            {dict.gettingStarted.bookingCtas.map((cta, index) => (
+          <div className="grid gap-3 lg:grid-cols-1">
+            {contactCtas.map(({ label, href, icon: Icon, external }) => (
               <a
-                key={cta.href}
-                href={index === 0 ? BOOKING_LINKS.min60 : BOOKING_LINKS.min90}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex min-w-56 items-center justify-between gap-6 rounded-full bg-white px-6 py-4 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                key={label}
+                href={href}
+                {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                className="group flex min-w-56 items-center gap-3 rounded-full bg-white px-6 py-4 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
               >
-                {cta.label}
+                <Icon className="h-5 w-5 shrink-0" aria-hidden />
+                {label}
               </a>
             ))}
           </div>

@@ -56,7 +56,7 @@
 
 @layer utilities {
   .section-shell {
-    @apply mx-auto max-w-[1200px] px-6 py-20 md:py-28 lg:py-32;
+    @apply mx-auto max-w-[1200px] px-6 py-20 md:py-28 lg:pb-16 lg:pt-32;
   }
 
   .section-title {

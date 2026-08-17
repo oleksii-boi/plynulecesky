@@ -6,17 +6,28 @@ export function About({ dict }: { dict: Dictionary }) {
   return (
     <section id="about" className="section-shell scroll-mt-28">
       <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
-        <div className="relative h-[520px] w-full overflow-hidden rounded-[2rem] bg-[#BBBBBB] md:h-[640px] lg:h-auto lg:min-h-[440px]">
+        <div className="relative h-[520px] w-full overflow-hidden rounded-[2rem] bg-[#BBBBBB] md:hidden lg:block lg:h-auto lg:min-h-[440px]">
           <Image
             src="/images/kateryna-transparent.png"
             alt={dict.about.photoAlt}
             fill
-            sizes="(min-width: 1024px) 440px, (min-width: 768px) 520px, 100vw"
-            className="origin-bottom translate-y-6 scale-[0.94] object-contain object-bottom"
+            sizes="(min-width: 1024px) 380px, 100vw"
+            className="origin-bottom translate-y-6 object-contain object-bottom"
           />
         </div>
 
         <div className="paper-card p-8 md:p-10 lg:p-12">
+          <div className="float-left mr-6 mb-4 hidden h-[278px] w-[246px] overflow-hidden rounded-[1.5rem] bg-[#BBBBBB] md:block lg:hidden">
+            <Image
+              src="/images/kateryna-transparent.png"
+              alt={dict.about.photoAlt}
+              width={224}
+              height={298}
+              sizes="224px"
+              className="h-full w-full object-cover md:translate-y-5"
+            />
+          </div>
+
           <h2 className="text-4xl font-medium leading-[1.08] tracking-[-0.02em] md:text-5xl">
             {dict.about.heading}
           </h2>

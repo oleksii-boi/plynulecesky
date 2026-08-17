@@ -37,17 +37,14 @@ export function Specialization({ dict }: { dict: Dictionary }) {
             )}
           >
             <CardHeader className="h-full justify-between p-8 md:p-10">
-              <div className="flex items-center justify-between">
-                <span
-                  className={cn(
-                    "flex size-14 items-center justify-center rounded-full text-foreground",
-                    iconColors[index]
-                  )}
-                >
-                  <Icon className="size-6 stroke-[1.5]" aria-hidden />
-                </span>
-                <span className="text-xs font-medium text-muted-foreground">0{index + 1}</span>
-              </div>
+              <span
+                className={cn(
+                  "flex size-14 items-center justify-center rounded-full text-foreground",
+                  iconColors[index]
+                )}
+              >
+                <Icon className="size-6 stroke-[1.5]" aria-hidden />
+              </span>
               <div className="mt-16">
                 <CardTitle className="text-2xl">{item.title}</CardTitle>
                 <CardDescription className="mt-4 text-sm font-medium leading-6">

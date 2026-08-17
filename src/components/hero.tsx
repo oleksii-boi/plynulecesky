@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { BOOKING_LINKS } from "@/lib/contact";
 import { TrustStrip } from "@/components/trust-strip";
 import { GraduationCap, Languages, MapPin } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
@@ -17,7 +18,9 @@ export function Hero({ dict }: { dict: Dictionary }) {
         </p>
 
         <Button asChild size="lg" className="mt-9">
-          <a href="#getting-started">{dict.hero.ctaPrimary}</a>
+          <a href={BOOKING_LINKS.trial} target="_blank" rel="noreferrer">
+            {dict.hero.ctaPrimary}
+          </a>
         </Button>
 
         <TrustStrip

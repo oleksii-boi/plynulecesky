@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { BOOKING_LINKS } from "@/lib/contact";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { Locale } from "@/lib/i18n/locales";
 
@@ -90,7 +91,9 @@ export function SiteHeader({
 
         <div className="flex items-center gap-2">
           <a
-            href="#getting-started"
+            href={BOOKING_LINKS.trial}
+            target="_blank"
+            rel="noreferrer"
             className="hidden h-10 items-center gap-1.5 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground shadow-[0_1px_2px_rgba(10,13,18,0.8),0_0_0_1px_#0a0d12] transition-colors hover:bg-[#262c37] sm:flex"
           >
             {dict.hero.ctaPrimary}

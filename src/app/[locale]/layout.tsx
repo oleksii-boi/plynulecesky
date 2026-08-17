@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { locales, localeTags, isLocale, type Locale } from "@/lib/i18n/locales";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 // This is the ROOT layout (there is no src/app/layout.tsx above it) so it
 // is the only place allowed to render <html>/<body>. That's what lets us
@@ -85,6 +86,27 @@ export function generateMetadata({
   };
 }
 
+// Site-wide brand identity, distinct from the per-page Person schema in
+// [locale]/page.tsx (which describes Kateryna, the instructor). Rendered
+// in the root layout — rather than only on the home page — so it's
+// present on every locale/route, including /terms/ and /cancellation/.
+function buildOrganizationData(locale: Locale) {
+  const url = `https://plynulecesky.cz${canonicalPaths[locale]}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "Plynule česky",
+    url,
+    logo: "https://plynulecesky.cz/images/brand-glyph.svg",
+    image: "https://plynulecesky.cz/images/og.jpg",
+    email: CONTACT_EMAIL,
+    founder: {
+      "@type": "Person",
+      name: "Kateryna Leshchenko",
+    },
+  };
+}
+
 export default function LocaleLayout({
   children,
   params,
@@ -93,10 +115,18 @@ export default function LocaleLayout({
   params: { locale: string };
 }) {
   const locale: Locale = isLocale(params.locale) ? params.locale : "uk";
+  const organizationData = buildOrganizationData(locale);
 
   return (
     <html lang={locale} className={sans.variable}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {/* eslint-disable-next-line react/no-danger -- static, locally-built JSON-LD, not user input */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

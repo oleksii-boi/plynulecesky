@@ -1,12 +1,12 @@
-import { Mail } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { mailtoHref } from "@/lib/contact";
+import { mailtoHref, SOCIAL_LINKS } from "@/lib/contact";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 export function BookingFallback({ dict }: { dict: Dictionary }) {
   const content = dict.gettingStarted;
-  const href = mailtoHref(content.fallbackHeading, content.fallbackBody);
+  const href = mailtoHref(content.fallbackEmailSubject);
 
   return (
     <section className="mx-auto max-w-[1200px] px-6 pb-20 md:pb-28">
@@ -21,9 +21,20 @@ export function BookingFallback({ dict }: { dict: Dictionary }) {
           </p>
         </div>
 
-        <Button asChild size="lg" className="w-fit shrink-0">
-          <a href={href}>{content.fallbackCta}</a>
-        </Button>
+        <div className="flex shrink-0 flex-col gap-3">
+          <Button asChild size="lg" className="w-full justify-start gap-2">
+            <a href={SOCIAL_LINKS.telegram} target="_blank" rel="noreferrer">
+              <Send className="size-5 stroke-[1.5]" aria-hidden />
+              {content.fallbackTelegramCta}
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="w-full justify-start gap-2">
+            <a href={href}>
+              <Mail className="size-5 stroke-[1.5]" aria-hidden />
+              {content.fallbackCta}
+            </a>
+          </Button>
+        </div>
       </div>
     </section>
   );

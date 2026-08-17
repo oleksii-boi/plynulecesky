@@ -43,19 +43,22 @@ export interface Dictionary {
   gettingStarted: {
     heading: string;
     steps: { title: string; description: string }[];
-    bookingHeading: string;
-    bookingCtas: { label: string; href: string }[];
     fallbackHeading: string;
     fallbackBody: string;
     fallbackCta: string;
+    fallbackTelegramCta: string;
+    fallbackEmailSubject: string;
   };
   pricing: {
     heading: string;
     subheading: string;
-    durationLabels: { min60: string; min90: string };
-    tiers: { key: "individual" | "group"; title: string; note: string }[];
-    discountHeading: string;
-    discountNote: string;
+    columns: { min60: string; min90: string };
+    rows: {
+      key: "individual" | "individualPackage" | "group";
+      label: string;
+    }[];
+    trialLabel: string;
+    ctaLabel: string;
   };
   faq: {
     heading: string;
@@ -63,6 +66,7 @@ export interface Dictionary {
   footer: {
     heading: string;
     body: string;
+    trialCta: string;
     emailCta: string;
     termsLabel: string;
     privacyLabel: string;
@@ -163,40 +167,30 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Усі заняття проходять дистанційно на платформі Google Meet. Посилання на онлайн-кімнату буде надіслано вам автоматично після успішного оформлення.",
         },
       ],
-      bookingHeading: "Записатись на заняття",
-      bookingCtas: [
-        { label: "60 хвилин", href: BOOKING_LINKS.min60 },
-        { label: "90 хвилин", href: BOOKING_LINKS.min90 },
-      ],
       fallbackHeading: "Що робити, якщо в календарі немає вільних віконець?",
       fallbackBody:
-        "Якщо наразі в календарі відсутній зручний для вас час, будь ласка, надішліть електронний лист. У листі коротко опишіть вашу поточну ситуацію, основну мету навчання та ваші часові можливості (бажані дні та години). Я обов'язково розгляну ваш запит, і ми узгодимо індивідуальний графік.",
+        "Якщо наразі в календарі відсутній зручний для вас час, будь ласка, надішліть електронний лист або напишіть у Telegram. Коротко опишіть вашу поточну ситуацію, основну мету навчання та ваші часові можливості (бажані дні та години). Я обов'язково розгляну ваш запит, і ми узгодимо індивідуальний графік.",
       fallbackCta: "Написати на пошту",
+      fallbackTelegramCta: "Написати в Telegram",
+      fallbackEmailSubject: "Запит на заняття",
     },
     pricing: {
       heading: "Вартість занять",
-      subheading:
-        "Прозорі ціни без прихованих платежів. Перше пробне заняття обговорюється індивідуально.",
-      durationLabels: { min60: "60 хв.", min90: "90 хв." },
-      tiers: [
-        {
-          key: "individual",
-          title: "Індивідуальне заняття",
-          note: "Ідеально для регулярних занять і стабільного прогресу.",
-        },
-        {
-          key: "group",
-          title: "Групове заняття 2–4 особи",
-          note: "Живе спілкування та обмін досвідом з іншими студентами.",
-        },
+      subheading: "Прозорі ціни без прихованих платежів.",
+      columns: { min60: "60 хвилин", min90: "90 хвилин" },
+      rows: [
+        { key: "individual", label: "Індивідуальне заняття (до 4 занять на місяць)" },
+        { key: "individualPackage", label: "Індивідуальне заняття (від 5 занять на місяць)" },
+        { key: "group", label: "Групове заняття 2–4 особи" },
       ],
-      discountHeading: "Знижка за пакет занять",
-      discountNote: "5% знижки за оплату 4–7 занять на місяць, 10% знижки за 8 і більше занять.",
+      trialLabel: "Пробне заняття (45 хвилин)",
+      ctaLabel: "Записатись на пробне заняття",
     },
     faq: { heading: "Часті запитання" },
     footer: {
       heading: "Готові розпочати?",
-      body: "Напишіть мені — разом визначимо ваш рівень і підберемо зручний графік.",
+      body: "Напишіть мені — разом визначимо ваш рівень і підберемо зручний графік. Достатньо написати або одразу записатися на перше заняття.",
+      trialCta: "Записатись на пробне заняття",
       emailCta:
         "Якщо ви маєте питання, проблеми з оплатою або хочете залишити відгук - звʼяжіться зі мною.",
       termsLabel: "Умови та повернення",
@@ -275,40 +269,30 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Všechny lekce probíhají online na platformě Google Meet. Odkaz na online místnost vám bude automaticky zaslán po úspěšném dokončení rezervace.",
         },
       ],
-      bookingHeading: "Přihlásit se na lekci",
-      bookingCtas: [
-        { label: "60 minut", href: BOOKING_LINKS.min60 },
-        { label: "90 minut", href: BOOKING_LINKS.min90 },
-      ],
       fallbackHeading: "Co dělat, když v kalendáři nejsou volné termíny?",
       fallbackBody:
-        "Pokud aktuálně v kalendáři není vhodný termín, napište prosím e-mail. Stručně popište svou současnou situaci, hlavní cíl studia a své časové možnosti (preferované dny a hodiny). Váš požadavek určitě zvážím a domluvíme si individuální rozvrh.",
+        "Pokud aktuálně v kalendáři není vhodný termín, napište prosím e-mail nebo na Telegram. Stručně popište svou současnou situaci, hlavní cíl studia a své časové možnosti (preferované dny a hodiny). Váš požadavek určitě zvážím a domluvíme si individuální rozvrh.",
       fallbackCta: "Napsat e-mail",
+      fallbackTelegramCta: "Napsat na Telegram",
+      fallbackEmailSubject: "Žádost o lekci",
     },
     pricing: {
       heading: "Ceník",
-      subheading:
-        "Transparentní ceny bez skrytých poplatků. První zkušební lekce se domlouvá individuálně.",
-      durationLabels: { min60: "60 min.", min90: "90 min." },
-      tiers: [
-        {
-          key: "individual",
-          title: "Individuální lekce",
-          note: "Ideální pro pravidelné lekce a stabilní pokrok.",
-        },
-        {
-          key: "group",
-          title: "Skupinová lekce 2–4 osoby",
-          note: "Živá komunikace a sdílení zkušeností s dalšími studenty.",
-        },
+      subheading: "Transparentní ceny bez skrytých poplatků.",
+      columns: { min60: "60 minut", min90: "90 minut" },
+      rows: [
+        { key: "individual", label: "Individuální lekce (do 4 lekcí měsíčně)" },
+        { key: "individualPackage", label: "Individuální lekce (od 5 lekcí měsíčně)" },
+        { key: "group", label: "Skupinová lekce 2–4 osoby" },
       ],
-      discountHeading: "Sleva za balíček lekcí",
-      discountNote: "5% sleva při platbě za 4–7 lekcí měsíčně, 10% sleva od 8 lekcí.",
+      trialLabel: "Zkušební lekce (45 minut)",
+      ctaLabel: "Zarezervovat zkušební lekci",
     },
     faq: { heading: "Časté dotazy" },
     footer: {
       heading: "Jste připraveni začít?",
-      body: "Napište mi — společně určíme vaši úroveň a domluvíme vhodný rozvrh.",
+      body: "Napište mi — společně určíme vaši úroveň a domluvíme vhodný rozvrh. Stačí napsat nebo si rovnou zarezervovat první lekci.",
+      trialCta: "Přihlásit se na zkušební lekci",
       emailCta:
         "Pokud máte dotaz, problém s platbou nebo chcete zanechat recenzi, kontaktujte mě",
       termsLabel: "Podmínky a vrácení peněz",

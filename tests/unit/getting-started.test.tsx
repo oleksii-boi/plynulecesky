@@ -6,11 +6,11 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 import { CONTACT_EMAIL, mailtoHref } from "@/lib/contact";
 
 describe("mailtoHref", () => {
-  it("builds a mailto link with the contact address and encoded subject/body", () => {
-    const href = mailtoHref("Test subject", "Test body");
+  it("builds a mailto link with the contact address and encoded subject, and no body", () => {
+    const href = mailtoHref("Test subject");
     expect(href.startsWith(`mailto:${CONTACT_EMAIL}?`)).toBe(true);
     expect(href).toContain("subject=Test%20subject");
-    expect(href).toContain("body=Test%20body");
+    expect(href).not.toContain("body=");
   });
 });
 

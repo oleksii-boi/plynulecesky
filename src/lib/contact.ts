@@ -7,6 +7,7 @@
 export const CONTACT_EMAIL = "kateryna@plynulecesky.com";
 
 export const BOOKING_LINKS = {
+  trial: "https://calendar.app.google/s6tMV1CSoJVgXVEM8",
   min60: "https://calendar.app.google/MZMuwNBTZpcWH4tp6",
   min90: "https://calendar.app.google/PAgVAsUEwPv2jL448",
 } as const;
@@ -19,7 +20,7 @@ export const SOCIAL_LINKS = {
   instagram: "https://instagram.com/plynulecesky",
 } as const;
 
-export function mailtoHref(subject: string, body: string): string {
-  const params = new URLSearchParams({ subject, body });
+export function mailtoHref(subject: string): string {
+  const params = new URLSearchParams({ subject });
   return `mailto:${CONTACT_EMAIL}?${params.toString().replace(/\+/g, "%20")}`;
 }
