@@ -14,7 +14,8 @@ describe("About", () => {
     for (const credential of dict.about.credentials) {
       expect(screen.getByText(credential)).toBeInTheDocument();
     }
-    expect(screen.getByRole("img", { name: dict.about.photoAlt })).toBeInTheDocument();
+    // Two responsive portrait variants: mobile/desktop and the tablet float.
+    expect(screen.getAllByRole("img", { name: dict.about.photoAlt })).toHaveLength(2);
   });
 
   it("keeps the same number of credentials across locales (content parity)", () => {
