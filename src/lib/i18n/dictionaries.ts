@@ -54,11 +54,16 @@ export interface Dictionary {
     subheading: string;
     columns: { min60: string; min90: string };
     rows: {
-      key: "individual" | "individualPackage" | "group";
+      key:
+        | "individualIntensive"
+        | "individualPackage"
+        | "individual"
+        | "group";
       label: string;
       note?: string;
     }[];
     trialLabel: string;
+    trialNote: string;
     ctaLabel: string;
   };
   faq: {
@@ -189,18 +194,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       columns: { min60: "60 хвилин", min90: "90 хвилин" },
       rows: [
         {
-          key: "individual",
+          key: "individualIntensive",
           label: "Індивідуальне заняття",
-          note: "до 4 занять на місяць",
+          note: "від 8 занять на місяць",
         },
         {
           key: "individualPackage",
           label: "Індивідуальне заняття",
-          note: "від 5 занять на місяць",
+          note: "від 4 до 7 занять на місяць",
+        },
+        {
+          key: "individual",
+          label: "Індивідуальне заняття",
+          note: "до 3 занять на місяць",
         },
         { key: "group", label: "Групове заняття", note: "2–4 особи" },
       ],
-      trialLabel: "Пробне заняття (45 хвилин)",
+      trialLabel: "Пробне заняття",
+      trialNote: "45 хвилин",
       ctaLabel: "Записатись на пробне заняття",
     },
     faq: { heading: "Часті запитання" },
@@ -307,18 +318,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       columns: { min60: "60 minut", min90: "90 minut" },
       rows: [
         {
-          key: "individual",
+          key: "individualIntensive",
           label: "Individuální lekce",
-          note: "do 4 lekcí měsíčně",
+          note: "od 8 lekcí měsíčně",
         },
         {
           key: "individualPackage",
           label: "Individuální lekce",
-          note: "od 5 lekcí měsíčně",
+          note: "4–7 lekcí měsíčně",
+        },
+        {
+          key: "individual",
+          label: "Individuální lekce",
+          note: "do 3 lekcí měsíčně",
         },
         { key: "group", label: "Skupinová lekce", note: "2–4 osoby" },
       ],
-      trialLabel: "Zkušební lekce (45 minut)",
+      trialLabel: "Zkušební lekce",
+      trialNote: "45 minut",
       ctaLabel: "Zarezervovat zkušební lekci",
     },
     faq: { heading: "Časté dotazy" },

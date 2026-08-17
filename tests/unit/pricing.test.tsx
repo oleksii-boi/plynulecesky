@@ -20,6 +20,8 @@ describe("Pricing", () => {
         RATES.individual.min90,
         RATES.individualPackage.min60,
         RATES.individualPackage.min90,
+        RATES.individualIntensive.min60,
+        RATES.individualIntensive.min90,
         RATES.group.min60,
         RATES.group.min90,
         RATES.trial.min45,

@@ -72,6 +72,9 @@ export function Pricing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
           <div>
             <p className="text-lg font-medium tracking-[-0.01em] md:text-xl">
               {p.trialLabel}
+              <span className="block text-xs font-normal text-muted-foreground md:inline md:text-sm md:before:content-['_·_']">
+                {p.trialNote}
+              </span>
             </p>
             <p className="mt-1 text-3xl font-medium tracking-[-0.03em]">
               {formatCurrency(RATES.trial.min45, locale)}
